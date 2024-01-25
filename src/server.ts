@@ -1,5 +1,6 @@
 import express from 'express'
 import payload from 'payload'
+import path from 'path';
 
 require('dotenv').config()
 const app = express()
@@ -8,6 +9,8 @@ const app = express()
 app.get('/', (_, res) => {
   res.redirect('/admin')
 })
+
+app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
 
 const start = async () => {
   // Initialize Payload
@@ -20,8 +23,9 @@ const start = async () => {
   })
 
   // Add your own express routes here
+  const port = process.env.PORT || 3000;
 
-  app.listen(3000)
+  app.listen(port)
 }
 
 start()

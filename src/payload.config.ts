@@ -7,14 +7,17 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 
 import Users from './collections/Users'
+import BlogPosts from './collections/BlogPosts'
+import Images from './collections/Images'
 
 export default buildConfig({
+  serverURL: process.env.PAYLOAD_URL,
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users],
+  collections: [Users, BlogPosts, Images],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
@@ -26,5 +29,6 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI,
     },
+    push: process.env.NODE_ENV === 'production' ? false : true
   }),
 })
