@@ -3,7 +3,6 @@ import { CollectionConfig, Field } from 'payload/types'
 const titleField: Field = {
   name: 'title',
   type: 'text',
-  required: true,
 }
 
 const paragraph: Field = {
@@ -27,6 +26,11 @@ const BlogPosts: CollectionConfig = {
     read: ()=> true
   },
   fields: [
+    {
+      name: 'id',
+      type: 'text',
+      required: true
+    },
     titleField,
     paragraph,
     featuredImage,
