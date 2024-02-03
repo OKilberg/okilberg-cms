@@ -37,7 +37,25 @@ const BlogPosts: CollectionConfig = {
     },
     titleField,
     caption,
-    type
+    type,
+    featuredImage,
+    {
+      name: 'level',
+      type: 'text'
+    },
+    {
+      name: 'experience',
+      type: 'text'
+    },
+    {
+      name: 'field',
+      type: 'text'
+    },
+    {
+      name: 'projects',
+      type: 'number'
+    }
+
   ],
 }
 
