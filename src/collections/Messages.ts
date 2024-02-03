@@ -12,7 +12,7 @@ const messageField: Field = {
   required: true
 }
 const emailField: Field = {
-    name: 'type',
+    name: 'email',
     type: 'email',
     required: true
   }
