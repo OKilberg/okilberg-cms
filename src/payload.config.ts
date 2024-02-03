@@ -10,6 +10,7 @@ import Users from './collections/Users'
 import BlogPosts from './collections/BlogPosts'
 import Images from './collections/Images'
 import Skills from './collections/Skills'
+import Messages from './collections/Messages'
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_URL,
@@ -18,7 +19,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, BlogPosts, Images, Skills],
+  collections: [Users, BlogPosts, Images, Skills, Messages],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
