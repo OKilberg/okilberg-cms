@@ -16,6 +16,11 @@ const featuredImage: Field = {
   relationTo: 'images'
 }
 
+const richText: Field = {
+  name: 'content',
+  type: 'richText',
+}
+
 const BlogPosts: CollectionConfig = {
   slug: 'blog-posts',
   //auth: true,
@@ -34,6 +39,7 @@ const BlogPosts: CollectionConfig = {
     titleField,
     paragraph,
     featuredImage,
+    richText
   ],
 }
 
